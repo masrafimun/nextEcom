@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 const outfit = Outfit({ subsets: ['latin'], weight: ["300", "400", "500"] })
 
 export const metadata = {
-  title: "QuickCart - GreatStack",
+  title: "Mash Shop",
   description: "E-Commerce with Next.js ",
 };
 
