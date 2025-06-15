@@ -36,7 +36,8 @@ const MyOrders = () => {
                             })
                         })
                      setOrders(allOrdersItem.reverse())
-            
+                     router.Refresh()
+
                     }
                   else{
                     console.log("something went wrong")
