@@ -1,13 +1,12 @@
 "use client"
 import { useEffect, useState } from "react";
-import { assets } from "@/assets/assets";
-import ProductCard from "@/components/ProductCard";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { assets } from "../../../assets/assets";
+import ProductCard from "../../../components/ProductCard";
+
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import Loading from "@/components/Loading";
-import { useAppContext } from "@/context/AppContext";
+import Loading from "../../../components/Loading";
+import { useAppContext } from "../../../context/AppContext";
 import React from "react";
 
 const Product = () => {
@@ -29,7 +28,6 @@ const Product = () => {
     }, [id, products.length])
 
     return productData ? (<>
-        <Navbar />
         <div className="px-6 md:px-16 lg:px-32 pt-14 space-y-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div className="px-5 lg:px-16 xl:px-20">
@@ -85,8 +83,8 @@ const Product = () => {
                         {productData.description}
                     </p>
                     <p className="text-3xl font-medium mt-6">
-                        ${productData.offerPrice}
-                        <span className="text-base font-normal text-gray-800/60 line-through ml-2">
+                        {productData.offerPrice}
+                        <span className="">
                             ${productData.price}
                         </span>
                     </p>
@@ -135,7 +133,6 @@ const Product = () => {
                 </button>
             </div>
         </div>
-        <Footer />
     </>
     ) : <Loading />
 };

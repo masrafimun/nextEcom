@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { assets } from "@/assets/assets";
+import { assets } from "../assets/assets";
 import Image from "next/image";
 
 const HeaderSlider = () => {
@@ -44,7 +44,7 @@ const HeaderSlider = () => {
   };
 
   return (
-    <div className="overflow-hidden relative w-full">
+    <div className="overflow-hidden z-10 mt-50 relative w-full">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
