@@ -6,7 +6,8 @@ export async function POST(req){
     try{
         await connectDB()
         const {user} =await req.json()
-        const orders = await orderModel.find({user})
+        let userId = user
+        const orders = await orderModel.find({userId})
         return NextResponse.json({
             success : true,
             orders
