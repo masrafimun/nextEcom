@@ -12,8 +12,8 @@ const Contact = () => {
             </div>
 
             <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
-                <img className="w-full md:max-w-[480px]" src={'./contact_img.png'} alt="" />
-                <div className="flex flex-col justify-center items-start gap-6">
+                <img className="w-full px-6 sm:px-0 sm:mx-0 md:max-w-[480px]" src={'./contact_img.png'} alt="" />
+                <div className="flex px-6 sm:px-0  flex-col justify-center items-start gap-6">
                     <p className="font-semibold text-xl text-gray-600">Our Store</p>
                     <p className="text-gray-500">Banani,Dhaka</p>
                     <p className="text-gray-500">Tel : (+088) 00000000 <br /> Email : Mashshop@gmail.com </p>

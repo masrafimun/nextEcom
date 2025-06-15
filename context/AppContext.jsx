@@ -4,7 +4,6 @@ import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { productsDummyData, userDummyData } from "../assets/assets";
 
 export const AppContext = createContext();
 
@@ -24,13 +23,7 @@ export const AppContextProvider = (props) => {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
 
-  const fetchProductData = async () => {
-    setProducts(productsDummyData);
-  };
 
-  const fetchUserData = async () => {
-    setUserData(userDummyData);
-  };
 
   //add to cart function
   const addToCart = async (itemId) => {
@@ -156,22 +149,14 @@ export const AppContextProvider = (props) => {
       getCartAmount()
   },[userData])
 
-  useEffect(() => {
-    fetchProductData();
-  }, []);
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
+ 
 
   const value = {
     user,
     currency,
     router,
     userData,
-    fetchUserData,
     products,
-    fetchProductData,
     cartItems,
     setCartItems,
     addToCart,

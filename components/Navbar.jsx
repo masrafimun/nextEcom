@@ -1,14 +1,13 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import { assets, CartIcon} from "../assets/assets";
 import Link from "next/link"
 import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
-
 const Navbar = () => {
 
   const { getCartCount,setShowSearch, router,token,setToken } = useAppContext();
-
+  const [visible,setVisible] =useState(false)
    const logout = () =>{
      localStorage.removeItem('token')
      setToken('')
@@ -64,8 +63,23 @@ const Navbar = () => {
                        <p className='absolute bottom-[-25%] leading-4 bg-black text-white w-4 text-[8px] rounded-full text-center  right-[-25%] '>{getCartCount()}</p>
                 </Link>
 
-                <img onClick={() => setVisible(true)} src={assets.menu_icon } className='w-5 cursor-pointer sm:hidden' alt="" />
+                <img onClick={() => setVisible(true)} src={'./menu_icon.png' } className='w-5 cursor-pointer sm:hidden' alt="" />
       </div>
+
+       <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-slate-100  z-50 transition-all ${ visible ? 'w-full' : 'w-0' }`}>
+                <div className='flex flex-col text-gray-600'>
+
+                    <div onClick={() => setVisible(false)} className='flex cursor-pointer items-center gap-4 p-3'>
+                        {/* <img className='h-4 rotate-180' src={'./'} alt="somet" /> */}
+                        <p className= ' px-3'>Back</p>
+                    </div>
+
+                    <Link onClick={() => setVisible(false)}  className='py-2 text-black  pl-6 border-b' href='/'>HOME</Link>
+                    <Link onClick={() => setVisible(false)}  className='py-2 text-black   pl-6 border-b' href='/all-products'>SHOP</Link>
+                    <Link onClick={() => setVisible(false)}  className='py-2 text-black   pl-6 border-b' href='/about'>ABOUT</Link>
+                    <Link onClick={() => setVisible(false)}  className='py-2 text-black   pl-6 border-b' href='/contact'>CONTACT</Link>                    
+                </div>
+       </div>
     </nav>
   );
 };
