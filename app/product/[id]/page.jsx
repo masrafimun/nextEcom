@@ -100,12 +100,12 @@ const Product = () => {
                                     <td className="text-gray-600 font-medium">Color</td>
                                     <td className="text-gray-800/50 ">Multi</td>
                                 </tr>
-                                <tr>
+{/*                                 <tr>
                                     <td className="text-gray-600 font-medium">Category</td>
                                     <td className="text-gray-800/50">
                                         {productData.category}
                                     </td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
