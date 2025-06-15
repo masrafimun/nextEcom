@@ -52,9 +52,9 @@ const MyOrders = () => {
         }
         }
 
-        useEffect(()=>{
-                loadOrderData();
-        },[token])
+          useEffect(()=>{
+                 loadOrderData() 
+        },[token,user])
 
      
     
