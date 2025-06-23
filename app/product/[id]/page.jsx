@@ -5,6 +5,7 @@ import AddToCartButtons from "./AddToCartButtons";
 import ImageGallery from "./ImageGallery";
 
 export async function generateMetadata({ params }) {
+  params = await params; // await params here
   const product = await fetchProduct(params.id);
   if (!product) {
     return {
@@ -40,6 +41,7 @@ async function fetchFeaturedProducts() {
 }
 
 export default async function ProductPage({ params }) {
+  params = await params; // await params here too
   const product = await fetchProduct(params.id);
   const products = await fetchFeaturedProducts();
 
@@ -92,7 +94,7 @@ export default async function ProductPage({ params }) {
           <p className="text-gray-600 mt-3">{product.description}</p>
           <p className="text-3xl font-medium mt-6">
             {product.offerPrice}
-            <span className="ml-2 line-through text-gray-400">
+            <span className="ml-2 ">
               ${product.price}
             </span>
           </p>
