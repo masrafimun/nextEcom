@@ -30,7 +30,6 @@ async function fetchProduct(id) {
   return data.product || null;
 }
 
-// You probably want to fetch featured products here too
 async function fetchFeaturedProducts() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/product`, {
     cache: "no-store",
@@ -119,7 +118,6 @@ export default async function ProductPage({ params }) {
             </table>
           </div>
 
-          {/* Use client AddToCartButtons component */}
           <AddToCartButtons productId={product._id} />
         </div>
       </div>
