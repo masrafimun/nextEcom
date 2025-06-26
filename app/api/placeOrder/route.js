@@ -7,6 +7,21 @@ export async function POST(req){
         await connectDB()
         const {userId,items,amount,address} =await req.json()
 
+
+        if(!userId){
+        return NextResponse.json({
+           success: false,
+           message : "Please Login"
+          })
+        }
+
+        if(items.length===0){
+           return NextResponse.json({
+           success: false,
+           message : "Please select an Item"
+          })
+        }
+
         const orderData = {
         userId,
         items,
