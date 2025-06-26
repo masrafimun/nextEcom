@@ -53,8 +53,9 @@ export const AppContextProvider = (props) => {
 
   //updating cart quantity
   const updateCartQuantity = async (itemId, quantity) => {
-    let newQuantity = quantity
+    let newQuantity = quantity;
     let cartData = structuredClone(cartItems);
+    cartData[itemId] = newQuantity;
     setCartItems(cartData);
     if(token){
       try{
